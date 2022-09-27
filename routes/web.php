@@ -22,5 +22,7 @@ use App\Http\Controllers\DashboardController;
 
 
 //ADMIN
-//For Dashboard
+//For Main
 Route::get('/',[DashboardController::class,'view']);
+
+Route::get('/dashboard1/view',[DashboardController::class,'dashboard_view'])->name('dashboard-view');
