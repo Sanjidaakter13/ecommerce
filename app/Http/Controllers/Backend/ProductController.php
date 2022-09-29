@@ -27,7 +27,7 @@ class ProductController extends Controller
         //dd($request->all());
 
         Product::create([
-
+    //Migration column name =>Input field name,
             'name'=>$request->pro_name,
             'category'=>$request->category_name,
             'quantity'=>$request->pro_quantity,
@@ -36,6 +36,14 @@ class ProductController extends Controller
             'description'=>$request->pro_description,
             'image'=>$request->pro_image,
 
+        ]);
+
+        $request->validate([
+            'pro_name'=>'required',
+            'category_name'=>'required',
+            'pro_quantity'=>'required|integer|min:1|max:10',
+            'pro_price'=>'required|numeric|min:1',
+            'pro_weight'=>'required|numeric',
         ]);
 
         return redirect()->route('product.list');
