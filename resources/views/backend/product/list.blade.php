@@ -7,6 +7,7 @@
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Name</th>
+      <th scope="col">Category Name</th>
       <th scope="col">Quantity</th>
       <th scope="col">Price</th>
       <th scope="col">Weight</th>
@@ -21,6 +22,7 @@
       
       <td>{{$key+1}}</td>
       <td>{{$product->name}}</td>
+      <td>{{$product->category}}</td>
       <td>{{$product->quantity}}</td>
       <td>{{$product->price}}</td>
       <td>{{$product->weight}}</td>

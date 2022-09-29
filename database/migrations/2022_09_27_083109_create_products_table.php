@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('quantity');
             $table->double('price');
             $table->double('weight');
-            
+            $table->string('category');
             $table->text('description')->nullable();
             $table->text('image')->nullable();
             $table->timestamps();

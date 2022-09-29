@@ -33,6 +33,17 @@
     <input name="pro_image" type="file" class="form-control" id="exampleInputPassword1" 
     placeholder="">
   </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">Select Category</label>
+    <select name="category_name"  class="form-control" id="exampleFormControlSelect2">
+      
+    @foreach($categories as $data)
+    <option value="{{$data->name}}">{{$data->name}}</option>
+    @endforeach
+
+    </select>
+  </div>
+
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

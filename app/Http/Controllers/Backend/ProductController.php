@@ -5,19 +5,21 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category;
 
 class ProductController extends Controller
 {
     public function product_list()
     {   
-        $products=Product::paginate(5);
+        $products=Product::with('category')->paginate(5);
 
         return view ('backend.product.list',compact('products'));
     }
 
     public function product_create()
     {
-        return view ('backend.product.form');
+        $categories=Category::all();
+        return view ('backend.product.form',compact('categories'));
     }
 
     public function product_store(Request $request)
@@ -27,6 +29,7 @@ class ProductController extends Controller
         Product::create([
 
             'name'=>$request->pro_name,
+            'category'=>$request->category_name,
             'quantity'=>$request->pro_quantity,
             'price'=>$request->pro_price,
             'weight'=>$request->pro_weight,
