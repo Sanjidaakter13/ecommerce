@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +23,26 @@ use App\Http\Controllers\DashboardController;
 
 
 
-//ADMIN
+//ADMIN Route
 //For Main
 Route::get('/',[DashboardController::class,'view']);
 
+//Dashboard
 Route::get('/dashboard1/view',[DashboardController::class,'dashboard_view'])->name('dashboard-view');
+
+//Product
+Route::get('/product/list',[ProductController::class,'product_list'])->name('product.list');
+Route::get('/product/create',[ProductController::class,'product_create'])->name('product.create');
+Route::post('/product/store',[ProductController::class,'product_store'])->name('product.store');
+Route::get('/product/create',[ProductController::class,'product_create'])->name('product.create');
+Route::get('/product/create',[ProductController::class,'product_create'])->name('product.create');
+Route::get('/product/create',[ProductController::class,'product_create'])->name('product.create');
+
+
+
+//Category
+Route::get('/category/list',[CategoryController::class,'category_list'])->name('category.list');
+Route::get('/category/create',[CategoryController::class,'category_create'])->name('category.create');
+Route::post('/category/store',[CategoryController::class,'category_store'])->name('category.store');
+
+
