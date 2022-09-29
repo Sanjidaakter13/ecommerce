@@ -33,6 +33,8 @@
   </tbody>
 </table>
 
+{{$products->links()}}
+
 
 <a href="{{route('product.create')}}" class="btn btn-primary">Create Product</a>
 
