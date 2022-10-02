@@ -34,7 +34,7 @@ Route::get('/dashboard1/view',[DashboardController::class,'dashboard_view'])->na
 Route::get('/product/list',[ProductController::class,'product_list'])->name('product.list');
 Route::get('/product/create',[ProductController::class,'product_create'])->name('product.create');
 Route::post('/product/store',[ProductController::class,'product_store'])->name('product.store');
-Route::get('/product/create',[ProductController::class,'product_create'])->name('product.create');
+Route::get('/product/delete/{id}',[ProductController::class,'product_delete'])->name('product.delete');
 Route::get('/product/create',[ProductController::class,'product_create'])->name('product.create');
 Route::get('/product/create',[ProductController::class,'product_create'])->name('product.create');
 

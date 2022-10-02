@@ -11,7 +11,7 @@ class ProductController extends Controller
 {
     public function product_list()
     {   
-        $products=Product::with('category')->paginate(5);
+        $products=Product::with('category')->orderBy('id','desc')->paginate(5);
 
         return view ('backend.product.list',compact('products'));
     }
@@ -47,5 +47,12 @@ class ProductController extends Controller
         ]);
 
         return redirect()->route('product.list');
+    }
+
+    public function product_delete($id)
+    {
+        Category::find($id)->delete();
+
+        return redirect()->back();
     }
 }
