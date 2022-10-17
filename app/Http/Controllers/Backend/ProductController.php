@@ -49,10 +49,7 @@ class ProductController extends Controller
         return redirect()->route('product.list');
     }
 
-    public function product_delete($id)
-    {
-        Category::find($id)->delete();
+   
 
-        return redirect()->back();
-    }
+   
 }

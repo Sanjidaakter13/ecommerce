@@ -20,8 +20,9 @@
       <td>{{$data->name}}</td>
       <td>{{$data->status}}</td>
       <td>{{$data->description}}</td>
-      <td><a href="{{route('product.delete',$data->id)}}"> <img style="height:30px; width:30px;" src="{{url('backend/assets/icon/icons-delete.png')}}" 
-      alt=""></a>
+      <td>
+        <a href="{{route('category.delete',$data->id)}}"> <img style="height:30px; width:30px;" src="{{url('backend/assets/icon/icons-delete.png')}}" alt=""></a>
+        <a href="{{route('category.view',$data->id)}}"><img  style="height:30px; width:30px;" src="{{url('backend/assets/icon/icons-view.png')}}" alt=""></a>
       </td>
     </tr>
  

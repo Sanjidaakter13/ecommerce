@@ -33,4 +33,17 @@ class CategoryController extends Controller
 
         return redirect()->route('category.list');
     }
+
+    public function category_delete($id){
+        Category::find($id)->delete();
+
+        return redirect()->back();
+    }
+
+    public function category_view($id)
+    {
+        Category::find($id);
+
+        return view ('backend.category.view');
+    }
 }
