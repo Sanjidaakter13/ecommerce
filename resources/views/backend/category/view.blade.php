@@ -13,48 +13,58 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
     <style>
-        html{
+        html {
             font-size: 62.5%;
-        }
-        h3 {
-            font-family:serif;
-            font-size:3.5rem;
-            margin-top:1.7em;
-        }
-        .image{
-            margin-top:7rem;
-           
-        }
-        p{
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 1.5rem;
 
         }
+
+        .form-label {
+            font-family: serif;
+            font-size: 3.5rem;
+            margin-top: 1.7em;
+            color: FloralWhite;
+        }
+
+    
+
+        .form-control {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1.5rem;
+            color: MidnightBlue;
+        }
+
     </style>
 </head>
 
 <body>
-
-    <div style="background-color: rgb(123, 192, 169); height:59.5rem" class="container text-left">
+  
+    <div style="background-color: LightSlateGray; height:59.5rem" class="container text-left">
         <div class="row">
-            <div class="col-md-4 text-center image ">
-                <img  style="height:45rem; width:20rem"  src="https://imgs.search.brave.com/3yYf2vWfkbz3NsX7diNPJYGDScuI8PjuguHCPuGG044/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5m/ZWFWRDduM0lUUGgx/bFFlc0xaSGlBSGFI/YSZwaWQ9QXBp"
-                    alt="">
-            </div>
-            <div class="col-md-8">
-                <div>
-                    <h3>Name</h3>
-                    <p>baby dress</p>
-                    <h3>Description</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima reiciendis exercitationem fuga
-                        facere sunt praesentium, incidunt nulla alias harum! Fuga ab animi quo doloribus. Magni veniam
-                        consequuntur nostrum officia sit.</p>
-                        <h3>Status</h3>
-                        <p>Active</p>
-                </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-7">
+                 <div class=container>
+                        <form action="">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name: </label>
+                                <input type="text" id="name" readonly class="form-control form-control-lg" value="{{$category->name}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="form-label">Description: </label>
+                                <input type="text" id="name" readonly class="form-control form-control-lg" value="{{$category->description}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="name" class="form-label">Status: </label>
+                                <input type="text" id="name" readonly class="form-control form-control-lg" value="{{$category->status}}">
+                            </div>
+
+                        </form>
+                    </div>
+                <div class="col-md-3"></div>
             </div>
         </div>
     </div>
+
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"

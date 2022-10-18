@@ -43,6 +43,9 @@ Route::get('/category/create',[CategoryController::class,'category_create'])->na
 Route::post('/category/store',[CategoryController::class,'category_store'])->name('category.store');
 Route::get('/category/delete/{id}',[CategoryController::class,'category_delete'])->name('category.delete');
 Route::get('/category/view/{id}',[CategoryController::class,'category_view'])->name('category.view');
+Route::get('/category/edit/{id}',[CategoryController::class,'category_edit'])->name('category.edit');
+Route::post('/category/update/{id}',[CategoryController::class,'category_update'])->name('category.update');
+
 
 
 

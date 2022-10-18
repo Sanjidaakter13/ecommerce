@@ -42,8 +42,30 @@ class CategoryController extends Controller
 
     public function category_view($id)
     {
-        Category::find($id);
+        $category= Category::find($id);
+       
+        // dd($category);
+        return view ('backend.category.view', compact('category'));
+    }
 
-        return view ('backend.category.view');
+    public function category_edit($id)
+    {
+        $category= Category::find($id);
+       
+        // dd($category);
+        return view ('backend.category.edit', compact('category'));
+    }
+
+    public function category_update(Request $request, $id)
+    {
+        $category=Category::find($id);
+
+        $category->update([
+            'name'=>$request->name,
+            'status'=>$request->status,
+            'description'=>$request->description,
+        ]);
+
+        return redirect()->route('category.list');
     }
 }
