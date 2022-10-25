@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Frontend\HomeController;
+
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
@@ -21,11 +23,9 @@ use App\Http\Controllers\Backend\ProductController;
 //     return view('welcome');
 // });
 
-
-
 //ADMIN Route
 //For Main
-Route::get('/',[DashboardController::class,'view']);
+Route::get('/admin',[DashboardController::class,'view']);
 
 //Dashboard
 Route::get('/dashboard1/view',[DashboardController::class,'dashboard_view'])->name('dashboard-view');
@@ -46,6 +46,14 @@ Route::get('/category/view/{id}',[CategoryController::class,'category_view'])->n
 Route::get('/category/edit/{id}',[CategoryController::class,'category_edit'])->name('category.edit');
 Route::post('/category/update/{id}',[CategoryController::class,'category_update'])->name('category.update');
 
+
+//Frontend
+Route::get('/',[HomeController::class,'home_view'])->name('home');
+Route::get('/shop/view',[HomeController::class,'shop_view'])->name('shop.view');
+Route::get('/shop/detail/view',[HomeController::class,'shopdetail_view'])->name('shopdetail.view');
+Route::get('/shopping/cart/view',[HomeController::class,'shopping_cart_view'])->name('shoppingcart.view');
+Route::get('/checkout/view',[HomeController::class,'checkout_view'])->name('checkout.view');
+Route::get('/contact/view',[HomeController::class,'contact_view'])->name('contact.view');
 
 
 
