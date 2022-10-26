@@ -7,6 +7,9 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\controllers\Backend\CustomerController;
+
+use App\Http\Controllers\Frontend\CustomerController as FrontendCustomer;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,8 +49,13 @@ Route::get('/category/view/{id}',[CategoryController::class,'category_view'])->n
 Route::get('/category/edit/{id}',[CategoryController::class,'category_edit'])->name('category.edit');
 Route::post('/category/update/{id}',[CategoryController::class,'category_update'])->name('category.update');
 
+//Customer
+Route::get('/customer/list',[CustomerController::class,'customer_list'])->name('customer.list');
+
 
 //Frontend
+
+//Pages view
 Route::get('/',[HomeController::class,'home_view'])->name('home');
 Route::get('/shop/view',[HomeController::class,'shop_view'])->name('shop.view');
 Route::get('/shop/detail/view',[HomeController::class,'shopdetail_view'])->name('shopdetail.view');
@@ -55,6 +63,6 @@ Route::get('/shopping/cart/view',[HomeController::class,'shopping_cart_view'])->
 Route::get('/checkout/view',[HomeController::class,'checkout_view'])->name('checkout.view');
 Route::get('/contact/view',[HomeController::class,'contact_view'])->name('contact.view');
 
-
-
-
+//Registration
+Route::get('/register',[FrontendCustomer::class,'register'])->name('register');
+Route::post('/doregistration',[FrontendCustomer::class,'doregistration'])->name('doregistration');

@@ -12,12 +12,12 @@ class CategoryController extends Controller
     public function category_list()
     {
         $categories=Category::all();
-        return view('backend.category.list',compact('categories'));
+        return view('backend.pages.category.list',compact('categories'));
     }
 
     public function category_create()
     {
-        return view ('backend.category.form');
+        return view ('backend.pages.category.form');
     }
 
     public function category_store(Request $request)
