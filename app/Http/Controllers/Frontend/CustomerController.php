@@ -28,7 +28,7 @@ class CustomerController extends Controller
     public function dologin(Request $request)
     {
         $user=Auth::attempt([
-            'name'=>$request->name,
+            'email'=>$request->email,
             'password'=>$request->password,
         ]);
         return redirect()->route('home');

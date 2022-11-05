@@ -54,7 +54,7 @@ Route::get('/customer/list',[CustomerController::class,'customer_list'])->name('
 Route::get('/customer/delete/{id}',[CustomerController::class,'customer_delete'])->name('customer.delete');
 Route::get('/customer/view/{id}',[CustomerController::class,'customer_view'])->name('customer.view');
 Route::get('/customer/edit/{id}',[CustomerController::class,'customer_edit'])->name('customer.edit');
-Route::get('/customer/update/{id}',[CustomerController::class,'customer_update'])->name('customer.update');
+Route::post('/customer/update/{id}',[CustomerController::class,'customer_update'])->name('customer.update');
 
 
 //Frontend

@@ -127,13 +127,13 @@
 
                           <!-- Button trigger modal -->
                           @guest()
-                          <button style="padding: 0px 10px 0px 10px;" type="button" class="btn btn-primary"
+                          <a href="" class="nav-item nav-link" 
                               data-toggle="modal" data-target="#exampleModalCenter">
                               Login
-                          </button>
+                          </a>
                           @endguest
                           @auth()
-                           <a href="{{route('logout')}}" class="nav-item nav-link">Logout</a>| {{auth()->user()->name}}
+                           <a href="{{route('logout')}}" class="nav-item nav-link">Logout( {{auth()->user()->name}}) </a>
                           @endauth
                           <a href="{{route('register')}}" class="nav-item nav-link">Register</a>
                       </div>

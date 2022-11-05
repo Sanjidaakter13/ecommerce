@@ -26,4 +26,22 @@ class CustomerController extends Controller
         $users=User::find($id);
         return view ('backend.pages.customer.view',compact('users'));
     }
+
+    public function customer_edit($id)
+    {
+        $users=User::find($id);
+        return view('backend.pages.customer.edit', compact('users'));
+    }
+
+    public function customer_update(Request $request, $id)
+    {
+        $users=User::find($id);
+        $users->update([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'mobile'=>$request->number,
+            'password'=>bcrypt($request->password),
+        ]);
+        return redirect()->route('customer.list');
+    }
 }
