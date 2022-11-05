@@ -9,7 +9,7 @@
     </div>
     <div class="form-group">
         <label for="">Status</label>
-        <select name="cat_status" class="custom-select custom-select-sm">
+        <select class="form-control" name="cat_status" class="custom-select custom-select-sm">
             <option selected>Open this select menu</option>
             <option value="active">Active</option>
             <option value="inactive">Inactive</option>

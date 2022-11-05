@@ -21,7 +21,7 @@
       <td>{{$data->status}}</td>
       <td>{{$data->description}}</td>
       <td>
-        <a href="{{route('category.delete',$data->id)}}"> <img style="height:30px; width:30px;" src="{{url('backend/assets/icon/icons-delete.png')}}" alt=""></a>
+        <a href="{{route('category.delete',$data->id)}}"><img style="height:30px; width:30px;" src="{{url('backend/assets/icon/icons-delete.png')}}" alt=""></a>
         <a href="{{route('category.view',$data->id)}}"><img  style="height:30px; width:30px;" src="{{url('backend/assets/icon/icons-view.png')}}" alt=""></a>
         <a href="{{route('category.edit',$data->id)}}"><img  style="height:30px; width:30px;" src="{{url('backend/assets/icon/edit-icons.png')}}" alt=""></a>
 

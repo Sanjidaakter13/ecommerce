@@ -14,4 +14,16 @@ class CustomerController extends Controller
         $customers=User::all();
         return view ('backend.pages.customer.list',compact('customers'));
     }
+
+    public function customer_delete($id)
+    {
+        User::find($id)->delete();
+        return redirect()->back();
+    }
+
+    public function customer_view($id)
+    {
+        $users=User::find($id);
+        return view ('backend.pages.customer.view',compact('users'));
+    }
 }

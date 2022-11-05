@@ -45,7 +45,7 @@ class CategoryController extends Controller
         $category= Category::find($id);
        
         // dd($category);
-        return view ('backend.category.view', compact('category'));
+        return view ('backend.pages.category.view', compact('category'));
     }
 
     public function category_edit($id)
@@ -53,7 +53,7 @@ class CategoryController extends Controller
         $category= Category::find($id);
        
         // dd($category);
-        return view ('backend.category.edit', compact('category'));
+        return view ('backend.pages.category.edit', compact('category'));
     }
 
     public function category_update(Request $request, $id)

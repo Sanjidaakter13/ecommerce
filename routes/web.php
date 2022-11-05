@@ -51,6 +51,10 @@ Route::post('/category/update/{id}',[CategoryController::class,'category_update'
 
 //Customer
 Route::get('/customer/list',[CustomerController::class,'customer_list'])->name('customer.list');
+Route::get('/customer/delete/{id}',[CustomerController::class,'customer_delete'])->name('customer.delete');
+Route::get('/customer/view/{id}',[CustomerController::class,'customer_view'])->name('customer.view');
+Route::get('/customer/edit/{id}',[CustomerController::class,'customer_edit'])->name('customer.edit');
+Route::get('/customer/update/{id}',[CustomerController::class,'customer_update'])->name('customer.update');
 
 
 //Frontend
@@ -63,6 +67,12 @@ Route::get('/shopping/cart/view',[HomeController::class,'shopping_cart_view'])->
 Route::get('/checkout/view',[HomeController::class,'checkout_view'])->name('checkout.view');
 Route::get('/contact/view',[HomeController::class,'contact_view'])->name('contact.view');
 
+//Customer
 //Registration
 Route::get('/register',[FrontendCustomer::class,'register'])->name('register');
 Route::post('/doregistration',[FrontendCustomer::class,'doregistration'])->name('doregistration');
+
+//Login
+Route::post('/dologin',[FrontendCustomer::class,'dologin'])->name('dologin');
+Route::get('/logout',[FrontendCustomer::class,'logout'])->name('logout');
+
