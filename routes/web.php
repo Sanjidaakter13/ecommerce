@@ -72,7 +72,3 @@ Route::get('/contact/view',[HomeController::class,'contact_view'])->name('contac
 Route::get('/register',[FrontendCustomer::class,'register'])->name('register');
 Route::post('/doregistration',[FrontendCustomer::class,'doregistration'])->name('doregistration');
 
-//Login
-Route::post('/dologin',[FrontendCustomer::class,'dologin'])->name('dologin');
-Route::get('/logout',[FrontendCustomer::class,'logout'])->name('logout');
-
