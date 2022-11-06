@@ -124,15 +124,63 @@
 
 
                       <div class="navbar-nav ml-auto py-0">
-                      <a href="" class="nav-item nav-link">Login</a>
 
-
+                          <!-- Button trigger modal -->
+                          @guest()
+                          <a href="" class="nav-item nav-link" 
+                              data-toggle="modal" data-target="#exampleModalCenter">
+                              Login
+                          </a>
+                          @endguest
+                          @auth()
+                           <a href="{{route('logout')}}" class="nav-item nav-link">Logout( {{auth()->user()->name}}) </a>
+                          @endauth
                           <a href="{{route('register')}}" class="nav-item nav-link">Register</a>
                       </div>
 
 
 
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                          aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                  <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLongTitle">Login</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                      </button>
+                                  </div>
 
+
+                                  <div class="modal-body">
+                                      <form action="{{route('dologin')}}" method="post">
+                                          @csrf
+                                          <div class="form-group">
+                                              <label for="exampleInputEmail1">Email address</label>
+                                              <input name="email" type="email" class="form-control"
+                                                  id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                  placeholder="Enter email">
+
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="exampleInputPassword1">Password</label>
+                                              <input name="password" type="password" class="form-control"
+                                                  id="exampleInputPassword1" placeholder="Password">
+                                          </div>
+
+                                          <button type="submit" class="btn btn-primary">Submit</button>
+                                      </form>
+                                  </div>
+
+
+                                  <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary"
+                                          data-dismiss="modal">Close</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
                   </div>
               </nav>
           </div>
