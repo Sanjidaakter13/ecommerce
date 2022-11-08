@@ -138,4 +138,6 @@
                     </a>
                 </li>
             </ul>
+            <a href="{{route('admin-logout')}}"><img  style="height:25px; width:25px;" src="{{url('backend/assets/icon/icons-logout.png')}}" alt=""></a>
+
         </nav>
