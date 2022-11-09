@@ -30,7 +30,7 @@ use App\Http\Controllers\Frontend\CustomerController as FrontendCustomer;
 Route::get('/admin/login',[DashboardController::class,'login'])->name('login');
 Route::post('/admin/dologin',[DashboardController::class,'dologin'])->name('admin-login');
 //Group route
-Route::Group (["middleware"=>"auth", "prefix"=>"admin"], function(){
+Route::Group (["middleware"=>["auth", "admincheck"] , "prefix"=>"admin"], function(){
     
     Route::get('/logout',[DashboardController::class,'admin_logout'])->name('admin-logout');
     
