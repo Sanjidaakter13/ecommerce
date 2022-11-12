@@ -12,7 +12,7 @@
         </div>
  @endif
 
-<form action="{{route('product.store')}}" method="post">
+<form action="{{route('product.store')}}" method="post" enctype="multipart/form-data">
   @csrf
   <div class="form-group">
     <label for="exampleInputPassword1">Name</label>

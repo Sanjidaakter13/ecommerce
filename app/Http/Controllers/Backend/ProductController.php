@@ -25,6 +25,16 @@ class ProductController extends Controller
     public function product_store(Request $request)
     {
         //dd($request->all());
+        $filerename=null;
+
+        if($request->hasFile('pro_image'))
+        {
+            $file=$request->file('pro_image');
+            $filerename="product_".rand(0,100000).date('Ymdhis').".".$file->getClientOriginalExtension();
+            $file->storeAs('uploads\products',$filerename);
+        }
+
+        
 
         Product::create([
     //Migration column name =>Input field name,
@@ -34,7 +44,7 @@ class ProductController extends Controller
             'price'=>$request->pro_price,
             'weight'=>$request->pro_weight,
             'description'=>$request->pro_description,
-            'image'=>$request->pro_image,
+            'image'=>$filerename,
 
         ]);
 
@@ -49,7 +59,4 @@ class ProductController extends Controller
         return redirect()->route('product.list');
     }
 
-   
-
-   
 }

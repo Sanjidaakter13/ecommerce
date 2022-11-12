@@ -20,6 +20,7 @@ class AdminCheck
     {
         return $next($request);
     }
+    //if false
     return redirect()->route('home');
 }
 }
