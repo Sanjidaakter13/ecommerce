@@ -59,4 +59,11 @@ class ProductController extends Controller
         return redirect()->route('product.list');
     }
 
+    public function product_delete($id)
+    {
+       $products=Product::find($id);
+       $products->delete();
+       return redirect()->back();
+    }
+
 }

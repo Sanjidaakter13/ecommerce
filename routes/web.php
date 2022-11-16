@@ -44,6 +44,7 @@ Route::Group (["middleware"=>["auth", "admincheck"] , "prefix"=>"admin"], functi
     Route::get('/product/list',[ProductController::class,'product_list'])->name('product.list');
     Route::get('/product/create',[ProductController::class,'product_create'])->name('product.create');
     Route::post('/product/store',[ProductController::class,'product_store'])->name('product.store');
+    Route::get('/product/delete/{id}',[ProductController::class,'product_delete'])->name('product.delete');
     
     //Category
     Route::get('/category/list',[CategoryController::class,'category_list'])->name('category.list');

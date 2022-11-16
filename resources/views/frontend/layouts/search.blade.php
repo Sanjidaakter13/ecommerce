@@ -288,7 +288,7 @@
                         </div>
                     </div>
 
-                    <img src="{{url('uploads/products' .'/'.$product->image)}}"
+                    <img style="height:200px" src="{{url('uploads/products' .'/'.$product->image)}}"
                         class="img-fluid rounded thumbnail-image">
 
 
@@ -338,7 +338,8 @@
                             <span class="rating-number">4.8</span>
                         </div>
 
-                        <a href=""> Add to card</a>
+                        <a href="" class="btn btn-sm text-dark p-0"><i
+                                        class="fas fa-shopping-cart text-primary mr-1"></i></a>
 
                     </div>
 

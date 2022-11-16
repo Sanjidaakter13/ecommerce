@@ -13,6 +13,7 @@
       <th scope="col">Weight</th>
       <th scope="col">Description</th>
       <th scope="col">Image</th>
+      <th scope="col">Action</th>
     
     </tr>
   </thead>
@@ -28,6 +29,8 @@
       <td>{{$product->weight}}</td>
       <td>{{$product->description}}</td>
       <td> <img style="height:40px; width:40"  src="{{url('uploads/products' .'/'.$product->image)}}" alt=""></td>
+      <td><a href="{{route('product.delete',$product->id)}}"><img style="height:30px; width:30px;" src="{{url('backend/assets/icon/icons-delete.png')}}" alt=""></a>
+</td>
     </tr>
  
     @endforeach
