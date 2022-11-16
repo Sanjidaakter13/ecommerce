@@ -82,3 +82,5 @@ Route::post('/doregistration',[FrontendCustomer::class,'doregistration'])->name(
 Route::post('/dologin',[FrontendCustomer::class,'dologin'])->name('dologin');
 Route::get('/logout',[FrontendCustomer::class,'logout'])->name('logout');
 
+//search 
+Route::get('/search',[FrontendCustomer::class,'search'])->name('search');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 
 class CustomerController extends Controller
@@ -38,5 +39,12 @@ class CustomerController extends Controller
     {
         Auth::logout();
         return redirect()->route('home');
+    }
+
+    public function search(Request $request)
+    {
+        $products=Product::where('name','like','%'.$request->product.'%')->get();
+        return view('frontend.layouts.search',compact('products'));
+
     }
 }

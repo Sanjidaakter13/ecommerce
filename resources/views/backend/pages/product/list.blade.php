@@ -27,7 +27,7 @@
       <td>{{$product->price}}</td>
       <td>{{$product->weight}}</td>
       <td>{{$product->description}}</td>
-      <td>{{$product->image}}</td>
+      <td> <img style="height:40px; width:40"  src="{{url('uploads/products' .'/'.$product->image)}}" alt=""></td>
     </tr>
  
     @endforeach

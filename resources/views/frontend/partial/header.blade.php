@@ -38,13 +38,12 @@
               </a>
           </div>
           <div class="col-lg-6 col-6 text-left">
-              <form action="">
+              <form action="{{route('search')}}" method="get">
                   <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Search for products">
+                      <input name="product" type="text" class="form-control" placeholder="Search for products">
                       <div class="input-group-append">
-                          <span class="input-group-text bg-transparent text-primary">
-                              <i class="fa fa-search"></i>
-                          </span>
+                          <button  style="background-color: #D19C97; border:none; height:37px" type="submit">Search</button>
+                          
                       </div>
                   </div>
               </form>
@@ -78,12 +77,12 @@
                   id="navbar-vertical" style="width: calc(100% - 30px); z-index: 1;">
                   <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
                       <div class="nav-item dropdown">
-                          <a href="#" class="nav-link" data-toggle="dropdown">Dresses 
+                          <a href="#" class="nav-link" data-toggle="dropdown">Dresses
                               <i class="fa fa-angle-down float-right mt-1"></i></a>
                           <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                             @foreach($categories as $category)
-                          <a href="" class="dropdown-item">{{$category->name}}</a>
-                            @endforeach
+                              @foreach($categories as $category)
+                              <a href="" class="dropdown-item">{{$category->name}}</a>
+                              @endforeach
                           </div>
                       </div>
                       @foreach($products as $data)
@@ -122,13 +121,12 @@
 
                           <!-- Button trigger modal -->
                           @guest()
-                          <a href="" class="nav-item nav-link" 
-                              data-toggle="modal" data-target="#exampleModalCenter">
+                          <a href="" class="nav-item nav-link" data-toggle="modal" data-target="#exampleModalCenter">
                               Login
                           </a>
                           @endguest
                           @auth()
-                           <a href="{{route('logout')}}" class="nav-item nav-link">Logout( {{auth()->user()->name}}) </a>
+                          <a href="{{route('logout')}}" class="nav-item nav-link">Logout( {{auth()->user()->name}}) </a>
                           @endauth
                           <a href="{{route('register')}}" class="nav-item nav-link">Register</a>
                       </div>
