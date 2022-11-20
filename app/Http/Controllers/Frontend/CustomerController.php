@@ -38,7 +38,7 @@ class CustomerController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('home');
+        return redirect()->route('home')->with('message','Logout successfully');
     }
 
     public function search(Request $request)

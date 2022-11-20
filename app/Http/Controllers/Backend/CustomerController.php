@@ -38,6 +38,7 @@ class CustomerController extends Controller
         $users=User::find($id);
         $users->update([
             'name'=>$request->name,
+            'role'=>$request->role,
             'email'=>$request->email,
             'mobile'=>$request->number,
             'password'=>bcrypt($request->password),

@@ -5,6 +5,7 @@
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Name</th>
+      <th scope="col">Role</th>
       <th scope="col">Number</th>
       <th scope="col">Email</th>
       <th scope="col">Action</th>
@@ -16,6 +17,7 @@
     <tr>
       <td>{{$data->id}}</td>
       <td>{{$data->name}}</td>
+      <td>{{$data->role}}</td>
       <td>{{$data->mobile}}</td>
       <td>{{$data->email}}</td>
       <td>

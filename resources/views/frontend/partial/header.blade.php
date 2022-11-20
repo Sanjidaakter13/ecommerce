@@ -128,10 +128,14 @@
                           @auth()
                           <a href="{{route('logout')}}" class="nav-item nav-link">Logout( {{auth()->user()->name}}) </a>
                           @endauth
+
+                          @if(session()->has('message'))
+                          <p class="alert alert-success">{{session()->get('message')}}</p>
+                          @endif
+                          
                           <a href="{{route('register')}}" class="nav-item nav-link">Register</a>
                       </div>
-
-
+                          
 
                       <!-- Modal -->
                       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
