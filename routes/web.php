@@ -73,6 +73,7 @@ Route::get('/shop/detail/view',[HomeController::class,'shopdetail_view'])->name(
 Route::get('/shopping/cart/view',[HomeController::class,'shopping_cart_view'])->name('shoppingcart.view');
 Route::get('/checkout/view',[HomeController::class,'checkout_view'])->name('checkout.view');
 Route::get('/contact/view',[HomeController::class,'contact_view'])->name('contact.view');
+Route::get('/product/view/{id}',[HomeController::class,'product_view'])->name('product.view');
 
 //Customer
 //Registration

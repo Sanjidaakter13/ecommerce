@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 
 class HomeController extends Controller
@@ -36,5 +37,11 @@ class HomeController extends Controller
     public function contact_view()
     {
         return view ('frontend.layouts.contact');
+    }
+    
+    public function product_view($id)
+    {
+        $product=Product::find($id);
+        return view('frontend.layouts.product-view',compact('product'));
     }
 }
