@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Http\Request;
+
 
 
 class HomeController extends Controller
@@ -16,7 +17,8 @@ class HomeController extends Controller
 
     public function shop_view()
     {
-        return view('frontend.layouts.shop');
+        $products=Product::paginate(3);
+        return view('frontend.layouts.shop',compact('products'));
     }
 
     public function shopdetail_view()

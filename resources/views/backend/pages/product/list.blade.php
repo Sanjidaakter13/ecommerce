@@ -28,7 +28,7 @@
         @foreach($products as $key=>$product)
         <tr>
 
-            <td>{{$key+1}}</td>
+            <td>{{$product->id}}</td>
             <td>{{$product->name}}</td>
             <td>{{$product->category}}</td>
             <td>{{$product->quantity}}</td>

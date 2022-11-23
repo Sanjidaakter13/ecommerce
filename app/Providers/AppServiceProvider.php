@@ -31,8 +31,7 @@ class AppServiceProvider extends ServiceProvider
         $categories=Category::all();
         View::share('categories', $categories);
 
-        $products=Product::all();
-        View::share('products',$products);
-        //view::share('key', variable) same name hobe
+        
+        //view::share('key', variable) will be same
     }
 }

@@ -43,7 +43,7 @@ class CustomerController extends Controller
 
     public function search(Request $request)
     {
-        $products=Product::where('name','like','%'.$request->product.'%')->get();
+        $products=Product::where('name','like','%'.$request->product.'%')->paginate(6);
         return view('frontend.layouts.search',compact('products'));
 
     }

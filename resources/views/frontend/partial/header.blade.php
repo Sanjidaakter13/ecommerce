@@ -85,9 +85,9 @@
                               @endforeach
                           </div>
                       </div>
-                      @foreach($products as $pro)
-                      <a href="" class="nav-item nav-link">{{$pro->name}}</a>
-                      @endforeach
+                     
+                    
+                    
 
                   </div>
               </nav>
