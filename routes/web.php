@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
     
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Backend\CartController;
     
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\controllers\Backend\CustomerController;
@@ -70,7 +71,6 @@ Route::Group (["middleware"=>["auth", "admincheck"] , "prefix"=>"admin"], functi
 Route::get('/',[HomeController::class,'home_view'])->name('home');
 Route::get('/shop/view',[HomeController::class,'shop_view'])->name('shop.view');
 Route::get('/shop/detail/view',[HomeController::class,'shopdetail_view'])->name('shopdetail.view');
-Route::get('/shopping/cart/view',[HomeController::class,'shopping_cart_view'])->name('shoppingcart.view');
 Route::get('/checkout/view',[HomeController::class,'checkout_view'])->name('checkout.view');
 Route::get('/contact/view',[HomeController::class,'contact_view'])->name('contact.view');
 Route::get('/product/view/{id}',[HomeController::class,'product_view'])->name('product.view');
@@ -86,3 +86,7 @@ Route::get('/logout',[FrontendCustomer::class,'logout'])->name('logout');
 
 //search 
 Route::get('/search',[FrontendCustomer::class,'search'])->name('search');
+
+//Add to cart
+Route::get('/shopping/cart/view',[HomeController::class,'shopping_cart_view'])->name('shoppingcart.view');
+Route::get('/addtocart/{id}',[CartController::class,'add_to_cart'])->name('add.to.cart');
