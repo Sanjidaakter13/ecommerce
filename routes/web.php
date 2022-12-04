@@ -90,3 +90,4 @@ Route::get('/search',[FrontendCustomer::class,'search'])->name('search');
 //Add to cart
 Route::get('/shopping/cart/view',[HomeController::class,'shopping_cart_view'])->name('shoppingcart.view');
 Route::get('/addtocart/{id}',[CartController::class,'add_to_cart'])->name('add.to.cart');
+Route::get('/clear/cart',[CartController::class,'clear_cart'])->name('clear.cart');

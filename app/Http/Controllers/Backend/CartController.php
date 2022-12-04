@@ -25,6 +25,7 @@ class CartController extends Controller
                   'price'=>$products->price,
                   'quantity'=>1,
                   'image'=>$products->image,
+                  'total'=>$products->price*1,
               ]
               ];
              session()->put('cart',$newcart);
@@ -37,6 +38,7 @@ class CartController extends Controller
        //($key,$array)
        {
            $getcart[$id]['quantity']= $getcart[$id]['quantity']+1;
+           $getcart[$id]['total']=$getcart[$id]['price']*$getcart[$id]['quantity'];
            session()->put('cart',$getcart);
        }
 
@@ -49,10 +51,17 @@ class CartController extends Controller
              'price'=>$products->price,
              'quantity'=>1,
              'image'=>$products->image,
+             'total'=>$products->price*1,
          ];
          session()->put('cart',$getcart);
        }
        return redirect()->route('shop.view');
+   }
+
+   public function clear_cart()
+   {
+      session()->forget('cart');
+      return redirect()->route('shoppingcart.view');
    }
 
 }

@@ -32,7 +32,10 @@
 
                         @php
                         $cartdata=session()->get('cart');
+                       
                         @endphp
+
+                        @if(session()->has('cart'))
 
                         @foreach($cartdata as $data)
                         <tr>
@@ -54,10 +57,17 @@
                                     </div>
                                 </div>
                             </td>
-                            <td class="align-middle"></td>
+                            <td class="align-middle"> {{$data['price']}}x{{$data['quantity']}}={{$data['total']}}</td>
                             <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
                         </tr>
+                        
+                       
+                        
                         @endforeach
+
+                        @else
+                        <p> No cart product is available </p>
+                        @endif
                     </tbody>
                 </table>
             </div>
@@ -89,6 +99,8 @@
                             <h5 class="font-weight-bold">Total</h5>
                             <h5 class="font-weight-bold">$160</h5>
                         </div>
+                       <a href="{{route('clear.cart')}}"> <button class="btn btn-block btn-primary my-3 py-3">Calear Cart</button></a>
+
                         <button class="btn btn-block btn-primary my-3 py-3">Proceed To Checkout</button>
                     </div>
                 </div>
