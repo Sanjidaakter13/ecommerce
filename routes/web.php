@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
     
 use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\Backend\CartController;
+use App\Http\Controllers\Frontend\CartController;
     
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\CategoryController;
@@ -91,3 +91,5 @@ Route::get('/search',[FrontendCustomer::class,'search'])->name('search');
 Route::get('/shopping/cart/view',[HomeController::class,'shopping_cart_view'])->name('shoppingcart.view');
 Route::get('/addtocart/{id}',[CartController::class,'add_to_cart'])->name('add.to.cart');
 Route::get('/clear/cart',[CartController::class,'clear_cart'])->name('clear.cart');
+Route::get('/cart/update/{id}',[CartController::class,'update_cart'])->name('update.cart');
+Route::get('cart/delete/{id}',[CartController::class,'delete_cart'])->name('delete.cart');
