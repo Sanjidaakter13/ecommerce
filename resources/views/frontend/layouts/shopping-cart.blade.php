@@ -32,6 +32,7 @@
 
                     @php
                     $cartdata=session()->get('cart');
+                    $total=0;
                     @endphp
 
                     @if(session()->has('cart'))
@@ -50,7 +51,7 @@
                                             <i class="fa fa-minus"></i>
                                         </button>
                                     </div>
-                                    <input type="number" name="quantity"  class="form-control form-control-sm bg-secondary text-center"
+                                    <input type="number" name="pro_quantity"  class="form-control form-control-sm bg-secondary text-center"
                                         value="{{$data['quantity']}}">
                                     <div class="input-group-btn">
                                         <button class="btn btn-sm btn-primary btn-plus">
@@ -63,6 +64,10 @@
                         <td class="align-middle"> {{$data['price']}}x{{$data['quantity']}}={{$data['total']}}</td>
                         <td class="align-middle"> <a href="{{route('delete.cart',$data['id'])}}"> <button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></a></td>
                     </tr>
+
+                    @php
+                    $total=$total+$data['total'];
+                    @endphp
 
                     @endforeach
 
@@ -88,7 +93,7 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between mb-3 pt-1">
                         <h6 class="font-weight-medium">Subtotal</h6>
-                        <h6 class="font-weight-medium">$150</h6>
+                        <h6 class="font-weight-medium">{{$total}}</h6>
                     </div>
                     <div class="d-flex justify-content-between">
                         <h6 class="font-weight-medium">Shipping</h6>

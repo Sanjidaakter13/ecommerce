@@ -65,11 +65,13 @@ class CartController extends Controller
 
     public function update_cart(Request $request,$id )
     {
+       // dd($request->pro_quantity);
         $products=Product::find($id);
         $getcart=session()->get('cart');
-        if($products->quantity>=$request->quantity)
+        //(migration column name)
+        if($products->quantity)
         {
-        $getcart[$id]['quantity']=$request->quantity;
+        $getcart[$id]['quantity']=$request->pro_quantity;
         $getcart[$id]['total']=$getcart[$id]['price']*$getcart[$id]['quantity'];
         session()->put('cart',$getcart);
     }
