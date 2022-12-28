@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {
-            background-color: #000
+            background-color: #D19C97
         }
 
         .card {
@@ -138,8 +138,9 @@
                                             value="XXL"> <span>XXL</span> </label>
                                 </div>
                                 <div class="cart mt-4 align-items-center"> <button
-                                        class="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button> <i
-                                        class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i>
+                                        class="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button> 
+                                    <a href="{{route('wishlist',$product->id)}}"> <i class="fa fa-heart text-muted"></i></a>
+                                    <i class="fa fa-share-alt text-muted"></i>
                                 </div>
                             </div>
                         </div>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
     
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\WishlistController;
     
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\CategoryController;
@@ -93,3 +94,8 @@ Route::get('/addtocart/{id}',[CartController::class,'add_to_cart'])->name('add.t
 Route::get('/clear/cart',[CartController::class,'clear_cart'])->name('clear.cart');
 Route::get('/cart/update/{id}',[CartController::class,'update_cart'])->name('update.cart');
 Route::get('cart/delete/{id}',[CartController::class,'delete_cart'])->name('delete.cart');
+
+//Wishlist
+Route::get('/wishlist/view',[WishlistController::class,'wishlist_view'])->name('wishlist.view');
+Route::get('/wishlist/{id}',[WishlistController::class,'wishlist'])->name('wishlist');
+Route::get('/wishlist/delete/{id}',[WishlistController::class,'delete_wishlist'])->name('delete.wishlist');
