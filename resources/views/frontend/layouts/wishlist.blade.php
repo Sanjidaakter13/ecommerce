@@ -193,14 +193,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="main-heading mb-10">My wishlist</div>
+                    <div style="text-align:center;background-color: #D19C97;font-family: Poppins, sans-serif;padding:15px"
+                        class="main-heading mb-10">
+                        <h1>My wishlist</h1>
+                    </div>
                     <div class="table-wishlist">
                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th width="45%">Product Name</th>
-                                    <th width="15%">Unit Price</th>
-                                    <th width="15%">Stock Status</th>
+                                    <th width="45%"><b>Product Name</b></th>
+                                    <th width="15%"><b>Unit Price</b></th>
+                                    <th width="15%"><b>Stock Status</b></th>
                                     <th width="15%"></th>
                                     <th width="10%"></th>
                                 </tr>
@@ -208,15 +211,15 @@
                             <tbody>
                                 @php
                                 $wishdata=session()->get('list');
+                                $total=0;
                                 @endphp
                                 @foreach($wishdata as $data)
-                                
                                 <tr>
                                     <td width="45%">
                                         <div class="display-flex align-center">
                                             <div class="img-product">
-                                                <img src="{{url('uploads/products/'.$data['image'])}}"
-                                                    alt="" class="mCS_img_loaded">
+                                                <img src="{{url('uploads/products/'.$data['image'])}}" alt=""
+                                                    class="mCS_img_loaded">
                                             </div>
                                             <div class="name-product">
                                                 {{$data['name']}}
@@ -225,17 +228,28 @@
                                     </td>
                                     <td width="15%" class="price">{{$data['price']}}.BDT</td>
                                     <td width="15%"><span class="in-stock-box">In Stock</span></td>
-                                    <td width="15%"> <a href="{{route('add.to.cart',$data['id'])}}"> <button class="round-black-btn small-btn">Add to Cart</button></a></td>
+                                    <td width="15%"> <a href="{{route('add.to.cart',$data['id'])}}"> <button
+                                                class="round-black-btn small-btn">Add to Cart</button></a></td>
                                     <td width="10%" class="text-center">
-                                        <a href="{{route('delete.wishlist',$data['id'])}}" class="trash-icon"><i class="far fa-trash-alt"></i></a></td>
+                                        <a href="{{route('delete.wishlist',$data['id'])}}" class="trash-icon"><i
+                                                class="far fa-trash-alt"></i></a></td>
                                 </tr>
+                                @php
+                                $total=$total+$data['price'];
+                                @endphp
                                 @endforeach
                             </tbody>
                         </table>
+                        <div>
+                            <h5><b>Subtotal:{{$total}}.BDT</b></h5>
+                            <a  href="{{route('wishlist.clear')}}"> <button style="width:200px" class="btn btn-block btn-primary my-3 py-3">Clear
+                                    List</button> </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

@@ -106,7 +106,7 @@
                         <h5 class="font-weight-bold">$160</h5>
                     </div>
                     <a href="{{route('clear.cart')}}"> <button class="btn btn-block btn-primary my-3 py-3">Clear
-                            Cart</button>
+                            Cart</button> </a>
                         <button class="btn btn-block btn-primary my-3 py-3">Proceed To Checkout</button>
                 </div>
             </div>

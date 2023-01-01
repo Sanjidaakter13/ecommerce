@@ -51,10 +51,11 @@
           <div class="col-lg-3 col-6 text-right">
               <a href="{{route('wishlist.view')}}" class="btn border">
                   <i class="fas fa-heart text-primary"></i>
-                  <span class="badge">0</span>
+                  <span class="badge">{{session()->has('list')?count(session()->get('list')):0}}</span>
               </a>
               <a href="{{route('shoppingcart.view')}}" class="btn border">
-                  <i class="fas fa-shopping-cart text-primary">({{session()->has('cart') ? count(session()->get('cart')) : 0}})</i>
+                  <i class="fas fa-shopping-cart text-primary"></i>
+                  <span class="badge">{{session()->has('cart') ? count(session()->get('cart')) : 0}}</span>
                  
               </a>
           </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+a<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -26,7 +26,7 @@
         }
 
         .act-price {
-            color: red;
+            color: #D19C97;
             font-weight: 700
         }
 
@@ -56,27 +56,27 @@
 
         label.radio span {
             padding: 2px 9px;
-            border: 2px solid #ff0000;
+            border: 2px solid #D19C97;
             display: inline-block;
-            color: #ff0000;
+            color: #D19C97;
             border-radius: 3px;
             text-transform: uppercase
         }
 
         label.radio input:checked+span {
-            border-color: #ff0000;
-            background-color: #ff0000;
+            border-color: #D19C97;
+            background-color: #D19C97;
             color: #fff
         }
 
         .btn-danger {
-            background-color: #ff0000 !important;
-            border-color: #ff0000 !important
+            background-color: #D19C97 !important;
+            border-color: #D19C97 !important
         }
 
         .btn-danger:hover {
-            background-color: #da0606 !important;
-            border-color: #da0606 !important
+            background-color: #20B2AA !important;
+            border-color: #20B2AA!important
         }
 
         .btn-danger:focus {
@@ -114,9 +114,9 @@
                         <div class="col-md-6">
                             <div class="product p-4">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="d-flex align-items-center"> <i class="fa fa-long-arrow-left"></i> <span
-                                            class="ml-1"> <a class="back" href="{{route('shop.view')}}">Back</a> </span> </div> <i
-                                        class="fa fa-shopping-cart text-muted"></i>
+                                <a class="back" href="{{route('shop.view')}}"><div class="d-flex align-items-center"> <i class="fa fa-long-arrow-left"></i> <span
+                                            class="ml-1">Back</span> </div> </a> 
+                                            <a href="{{route('shoppingcart.view')}}"> <i class="fa fa-shopping-cart text-muted"></i> </a>
                                 </div>
                                 <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand">Orianz</span>
                                     <h5 class="text-uppercase">{{$product->name}}</h5>
@@ -138,7 +138,7 @@
                                             value="XXL"> <span>XXL</span> </label>
                                 </div>
                                 <div class="cart mt-4 align-items-center"> <button
-                                        class="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button> 
+                                        class="btn btn-danger text-uppercase mr-2 px-4"><a style="text-decoration:none;color:white" href="{{route('add.to.cart',$product->id)}}">ADD TO CART</a></button> 
                                     <a href="{{route('wishlist',$product->id)}}"> <i class="fa fa-heart text-muted"></i></a>
                                     <i class="fa fa-share-alt text-muted"></i>
                                 </div>

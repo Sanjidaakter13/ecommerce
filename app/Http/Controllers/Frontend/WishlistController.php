@@ -30,9 +30,35 @@ class WishlistController extends Controller
             ];
             session()->put('list',$newlist);
             $wishlist=session()->get('list');
+            return redirect()->back();
         }
+        if(!isset($wishlist[$id]))
+        {
+            $wishlist[$id]=[
+                'id'=>$products->id,
+                    'name'=>$products->name,
+                    'price'=>$products->price,
+                    'image'=>$products->image,
+                    'subtotal'=>$products->price,
+            ];
+            session()->put('list',$wishlist);
+            $wishlist=session()->get('list');
+        }           
         return redirect()->back();
     }
 
-    
+    public function delete_wishlist($id)
+    {
+        $wishlist=session()->get('list');
+        unset($wishlist[$id]);
+        session()->put('list',$wishlist);
+        return redirect()->route('home');
+    }
+
+    public function wishlist_clear()
+    {
+        session()->forget('list');
+        return redirect()->route('home');
+    }
+
 }
