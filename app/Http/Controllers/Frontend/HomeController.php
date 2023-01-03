@@ -28,7 +28,8 @@ class HomeController extends Controller
 
     public function shopping_cart_view()
     {
-        return view('frontend.layouts.shopping-cart');
+        $products=Product::all();
+        return view('frontend.layouts.shopping-cart',compact('products'));
     }
 
     public function checkout_view()

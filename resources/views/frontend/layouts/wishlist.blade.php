@@ -227,7 +227,7 @@
                                         </div>
                                     </td>
                                     <td width="15%" class="price">{{$data['price']}}.BDT</td>
-                                    <td width="15%"><span class="in-stock-box">In Stock</span></td>
+                                    <td width="15%"><span style="background-color:green" class="in-stock-box">In Stock</span></td>
                                     <td width="15%"> <a href="{{route('add.to.cart',$data['id'])}}"> <button
                                                 class="round-black-btn small-btn">Add to Cart</button></a></td>
                                     <td width="10%" class="text-center">

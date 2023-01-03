@@ -30,7 +30,7 @@ class WishlistController extends Controller
             ];
             session()->put('list',$newlist);
             $wishlist=session()->get('list');
-            return redirect()->back();
+            return redirect()->route('home');
         }
         if(!isset($wishlist[$id]))
         {
@@ -44,7 +44,7 @@ class WishlistController extends Controller
             session()->put('list',$wishlist);
             $wishlist=session()->get('list');
         }           
-        return redirect()->back();
+        return redirect()->route('home');
     }
 
     public function delete_wishlist($id)
