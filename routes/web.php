@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\WishlistController;
+use App\Http\Controllers\Frontend\OrderController;
+use App\Http\Controllers\Frontend\OrderdetailController;
+
     
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\CategoryController;
@@ -77,6 +80,13 @@ Route::get('/contact/view',[HomeController::class,'contact_view'])->name('contac
 Route::get('/product/view/{id}',[HomeController::class,'product_view'])->name('product.view');
 
 //Customer
+
+//Order
+Route::get('/order/list',[OrderController::class,'order_list'])->name('order-list');
+
+//Order-details
+Route::get('orderdetails/list',[OrderdetailController::class,'orderdetail_list'])->name('orderdetail.list');
+
 //Registration
 Route::get('/register',[FrontendCustomer::class,'register'])->name('register');
 Route::post('/doregistration',[FrontendCustomer::class,'doregistration'])->name('doregistration');
