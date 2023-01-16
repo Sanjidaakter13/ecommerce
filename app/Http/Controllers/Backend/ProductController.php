@@ -34,7 +34,7 @@ class ProductController extends Controller
             $file->storeAs('uploads\products',$filerename);
         }
 
-        
+        // dd($filerename);
 
         Product::create([
     //Migration column name =>Input field name,

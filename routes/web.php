@@ -13,6 +13,8 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\controllers\Backend\CustomerController;
+use App\Http\Controllers\Backend\SubCategoryController;
+
     
 use App\Http\Controllers\Frontend\CustomerController as FrontendCustomer;
     
@@ -60,6 +62,10 @@ Route::Group (["middleware"=>["auth", "admincheck"] , "prefix"=>"admin"], functi
     Route::get('/category/edit/{id}',[CategoryController::class,'category_edit'])->name('category.edit');
     Route::post('/category/update/{id}',[CategoryController::class,'category_update'])->name('category.update');
     
+    //subcategory
+    Route::get('/subcategory/list',[SubCategoryController::class,'subcategory_list'])->name('subcategory.list');
+    Route::get('/subcategory/create',[SubCategoryController::class,'subcategory_create'])->name('subcategory.create');
+    Route::post('/subcategory/store',[SubCategoryController::class,'subcategory_store'])->name('subcategory.store');
     //Customer
     Route::get('/customer/list',[CustomerController::class,'customer_list'])->name('customer.list');
     Route::get('/customer/delete/{id}',[CustomerController::class,'customer_delete'])->name('customer.delete');

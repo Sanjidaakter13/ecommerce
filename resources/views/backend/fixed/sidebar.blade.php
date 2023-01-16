@@ -67,26 +67,7 @@
                     </ul>
                 </li>
 
-                <li class="nav-item">
-                    <a href="pages/tables/data.html" class="nav-link">
-                        <img style="height:25px; width:25px;" src="{{url('backend/assets/icon/icons-product-3.png')}}"
-                            alt="">
-                        <p>
-                            Product
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('product.list')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>List</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-
+                
                 <li class="nav-item">
                     <a href="pages/tables/data.html" class="nav-link">
                         <img style="height:20px; width:20px;" src="{{url('backend/assets/icon/icons-categories.png')}}"
@@ -104,9 +85,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/tables/data.html" class="nav-link">
+                            <a href="{{route('subcategory.list')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>DataTables</p>
+                                <p>Sub Category</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -115,6 +96,26 @@
                                 <p>jsGrid</p>
                             </a>
                         </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="pages/tables/data.html" class="nav-link">
+                        <img style="height:25px; width:25px;" src="{{url('backend/assets/icon/icons-product-3.png')}}"
+                            alt="">
+                        <p>
+                            Product
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('product.list')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>List</p>
+                            </a>
+                        </li>
+
                     </ul>
                 </li>
 

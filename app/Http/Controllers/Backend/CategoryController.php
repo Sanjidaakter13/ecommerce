@@ -24,11 +24,19 @@ class CategoryController extends Controller
     { 
          // dd($request->all());
 
+        $filerename=null;
+
+        if($request->hasFile('cat_image'))
+        {
+            $file=$request->file('cat_image');
+            $filerename="category_".rand(0,100000).date('Ymdhis').".".$file->getClientOriginalExtension();
+            $file->storeAs('uploads\categories',$filerename);
+        }
         Category::create([
             'name'=>$request->cat_name,
             'status'=>$request->cat_status,
             'description'=>$request->cat_description,
-            
+            'image'=>$filerename,
         ]);
 
         return redirect()->route('category.list');

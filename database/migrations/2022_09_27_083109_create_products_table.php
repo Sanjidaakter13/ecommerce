@@ -21,7 +21,7 @@ return new class extends Migration
             $table->double('weight');
             $table->string('category');
             $table->text('description')->nullable();
-            $table->text('image')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
