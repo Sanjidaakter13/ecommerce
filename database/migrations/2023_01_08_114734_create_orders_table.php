@@ -19,9 +19,11 @@ return new class extends Migration
             $table->string('date');
             $table->integer('user_id');
             $table->string('email_id');
+            $table->integer('payment_id');
             $table->string('phone_no');
             $table->text('address');
-            $table->double('shipping_cost');
+            $table->string('status');
+            $table->integer('shipping_cost');
             $table->double('total_price');
             $table->timestamps();
         });
