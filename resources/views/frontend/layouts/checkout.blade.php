@@ -2,7 +2,7 @@
 @section('content')
   <!-- Page Header Start -->
   <div class="container-fluid bg-secondary mb-5">
-        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 30px">
             <h1 class="font-weight-semi-bold text-uppercase mb-3">Checkout</h1>
             <div class="d-inline-flex">
                 <p class="m-0"><a href="">Home</a></p>
@@ -48,18 +48,15 @@
                         <div class="col-md-6 form-group">
                             <label>Country</label>
                             <select class="custom-select">
-                                <option selected>United States</option>
+                                <option selected>Country</option>
                                 <option>Afghanistan</option>
-                                <option>Albania</option>
-                                <option>Algeria</option>
+                                <option>Bangladesh</option>
+                                <option>India</option>
+                                <option>Pakistan</option>
                             </select>
                         </div>
                         <div class="col-md-6 form-group">
                             <label>City</label>
-                            <input class="form-control" type="text" placeholder="New York">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>State</label>
                             <input class="form-control" type="text" placeholder="New York">
                         </div>
                         <div class="col-md-6 form-group">
