@@ -15,12 +15,13 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'name'=>'admin',
-            'mobile'=>'01923495867',
-            'email'=>'admin@gmail.com',
-            'password'=>bcrypt('12345'),
-            'role'=>'admin',
-        ]);
+        User::factory()->count(50)->create();
+        // User::create([
+        //     'name'=>'admin',
+        //     'mobile'=>'01923495867',
+        //     'email'=>'admin@gmail.com',
+        //     'password'=>bcrypt('12345'),
+        //     'role'=>'admin',
+        // ]);
     }
 }

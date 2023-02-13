@@ -5,7 +5,7 @@
  <div class="container-fluid pt-5">
  <div style=" display:flex; "class="row">
      <div class="col-md-4"></div>
-     <div style="width: 850px; margin-bottom: 40px;" id="header-carousel" class="carousel slide"
+     <div style="width: 850px; margin-left: 370px;" id="header-carousel" class="carousel slide"
          data-ride="carousel">
          <div class="carousel-inner">
              <div class="carousel-item active" style="height: 410px;">
