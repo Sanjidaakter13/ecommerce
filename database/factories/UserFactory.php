@@ -19,6 +19,7 @@ class UserFactory extends Factory
     {
         return [
             'name' => fake()->name(),
+            'role_id'=>fake()->numberBetween(2,3),
             'mobile'=>fake()->phoneNumber(),        // '201-886-0269 x3767'
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
