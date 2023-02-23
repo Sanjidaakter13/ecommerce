@@ -87,6 +87,9 @@ Route::Group (["middleware"=>["auth", "admincheck"] , "prefix"=>"admin"], functi
     Route::get('/role/delete{id}',[RoleController::class,'role_delete'])->name('role.delete');
     Route::get('/role/assign{id}',[RoleController::class,'role_assign'])->name('role.assign');
 
+    //permission 
+    Route::get('/permission',[PermissionController::class,'permission_list'])->name('permission.list');
+
 });
 
 
