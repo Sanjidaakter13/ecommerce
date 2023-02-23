@@ -7,6 +7,8 @@ use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\WishlistController;
 use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\Frontend\OrderdetailController;
+use App\Http\Controllers\Frontend\CustomerController as FrontendCustomer;
+
 
     
 use App\Http\Controllers\Backend\DashboardController;
@@ -14,9 +16,11 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\SubCategoryController;
+use App\Http\controllers\Backend\RoleController;
+use App\Http\controllers\Backend\PermissionController;
+
 
     
-use App\Http\Controllers\Frontend\CustomerController as FrontendCustomer;
     
     /*
     |--------------------------------------------------------------------------
@@ -72,7 +76,18 @@ Route::Group (["middleware"=>["auth", "admincheck"] , "prefix"=>"admin"], functi
     Route::get('/customer/view/{id}',[CustomerController::class,'customer_view'])->name('customer.view');
     Route::get('/customer/edit/{id}',[CustomerController::class,'customer_edit'])->name('customer.edit');
     Route::post('/customer/update/{id}',[CustomerController::class,'customer_update'])->name('customer.update');
-    });
+    
+    //Role
+    Route::get('/role',[RoleController::class,'role_list'])->name('role.list');
+    Route::get('/role/create',[RoleController::class,'role_create'])->name('role.create');
+    Route::post('/role/store',[RoleController::class,'role_store'])->name('role.store');
+    Route::get('/role/view{id}',[RoleController::class,'role_view'])->name('role.view');
+    Route::get('/role/edit{id}',[RoleController::class,'role_edit'])->name('role.edit');
+    Route::post('/role/update{id}',[RoleController::class,'role_update'])->name('role.update');
+    Route::get('/role/delete{id}',[RoleController::class,'role_delete'])->name('role.delete');
+    Route::get('/role/assign{id}',[RoleController::class,'role_assign'])->name('role.assign');
+
+});
 
 
 //Frontend Routes

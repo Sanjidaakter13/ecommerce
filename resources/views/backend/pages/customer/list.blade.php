@@ -17,7 +17,7 @@
     <tr>
       <td>{{$data->id}}</td>
       <td>{{$data->name}}</td>
-      <td>{{$data->role}}</td>
+      <td>{{$data->role_id}}</td>
       <td>{{$data->mobile}}</td>
       <td>{{$data->email}}</td>
       <td>

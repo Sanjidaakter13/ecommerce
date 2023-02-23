@@ -49,19 +49,7 @@
                         <li class="nav-item">
                             <a href="{{route('dashboard-view')}}" class="nav-link active">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Dashboard v1</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index2.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Dashboard v2</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index3.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Dashboard v3</p>
+                                <p>Dashboard</p>
                             </a>
                         </li>
                     </ul>
@@ -116,6 +104,44 @@
                             </a>
                         </li>
 
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="pages/tables/data.html" class="nav-link">
+                        <img style="height:35px; width:35px;" src="{{url('backend/assets/icon/role-icon.png')}}"
+                            alt="">
+                        <p>
+                            Role
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('role.list')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>List</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="pages/tables/data.html" class="nav-link">
+                        <img style="height:25px; width:25px;" src="{{url('backend/assets/icon/permission-icon.png')}}"
+                            alt="">
+                        <p>
+                           permission
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('role.list')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>List</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 
