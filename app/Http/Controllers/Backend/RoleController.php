@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Role;
+use App\Models\Permission;
+
 
 class RoleController extends Controller
 {
@@ -52,5 +54,11 @@ class RoleController extends Controller
 
     return redirect()->route('role.list');
 
+    }
+
+    public function role_assignlist($id){
+        $role=Role::find($id);
+        $permissions=Permission::all();
+        return view('backend.pages.role.assign',compact('permissions','role'));
     }
 }
