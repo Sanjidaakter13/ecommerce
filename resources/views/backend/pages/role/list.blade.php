@@ -23,7 +23,7 @@
       <td>
         <a href="{{route('role.view',$data->id)}}"><img  style="height:30px; width:30px;" src="{{url('backend/assets/icon/icons-view.png')}}" alt=""></a>
         <a href="{{route('role.edit',$data->id)}}"><img  style="height:30px; width:30px;" src="{{url('backend/assets/icon/edit-icons.png')}}" alt=""></a>
-        <a href="{{route('role.assign',$data->id)}}"><img  style="height:30px; width:30px;" src="{{url('backend/assets/icon/assign-icon.png')}}" alt=""></a>
+        <a href="{{route('role.assign.list',$data->id)}}"><img  style="height:30px; width:30px;" src="{{url('backend/assets/icon/assign-icon.png')}}" alt=""></a>
         <a href="{{route('role.delete',$data->id)}}"><img style="height:30px; width:30px;" src="{{url('backend/assets/icon/icons-delete.png')}}" alt=""></a>
       </td>
     </tr>

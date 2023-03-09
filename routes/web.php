@@ -85,11 +85,11 @@ Route::Group (["middleware"=>["auth", "admincheck"] , "prefix"=>"admin"], functi
     Route::get('/role/edit{id}',[RoleController::class,'role_edit'])->name('role.edit');
     Route::post('/role/update{id}',[RoleController::class,'role_update'])->name('role.update');
     Route::get('/role/delete{id}',[RoleController::class,'role_delete'])->name('role.delete');
-    Route::get('/role/assign{id}',[RoleController::class,'role_assignlist'])->name('role.assign');
-
+    Route::get('/role/assign{id}',[RoleController::class,'role_assignlist'])->name('role.assign.list');
+    
     //permission 
     Route::get('/permission',[PermissionController::class,'permission_list'])->name('permission.list');
-
+    Route::post('/permissions-assign/{id}',[PermissionController::class,'assignPermissions'])->name('permissions.assign');
 });
 
 
