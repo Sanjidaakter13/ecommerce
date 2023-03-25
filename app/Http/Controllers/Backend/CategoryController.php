@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
-//use App\Mail\Categorymail;
-//use Illuminate\Support\Facades\Mail;
+use App\Mail\Categorymail;
+use Illuminate\Support\Facades\Mail;
 
 
 class CategoryController extends Controller
@@ -40,7 +40,7 @@ class CategoryController extends Controller
             'description'=>$request->cat_description,
             'image'=>$filerename,
         ]);
-        //Mail::to('example@gmail.com')->send(new CategoryMail());
+       Mail::to('example@gmail.com')->send(new CategoryMail());
         return redirect()->route('category.list');
     }
 
