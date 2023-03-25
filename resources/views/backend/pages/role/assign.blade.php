@@ -12,13 +12,27 @@
 
 @foreach($permissions as $permission)
 <div class="form-check">
-  <input @if(in_array($permission->id, $permission_ids)) checked @endif name="permission[]" value="{{$permission->id}}" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <input  @if(in_array($permission->id, $permission_ids)) checked @endif name="permission[]" value="{{$permission->id}}" class="form-check-input" type="checkbox" value="" id="">
   <label class="form-check-label" for="flexCheckDefault">
     {{$permission->name}}
   </label>
 </div>
 @endforeach
+<div >
+    <input type="checkbox" id="select-all">
+    <label class="form-check-label" for="">Select All</label>
+    </div>
 <button class="btn btn-success" type="submit">Assign</button>
 </form>
 
+
+<script>
+   document.getElementById('select-all').addEventListener("click",function() {
+    var checkboxes = document.querySelectorAll(".form-check-input");
+    console.log(checkboxes)
+    for (var checkbox of checkboxes) {
+        checkbox.checked = this.checked;
+    }
+})
+</script>
 @endsection

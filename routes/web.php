@@ -1,7 +1,8 @@
 <?php
     
 use Illuminate\Support\Facades\Route;
-    
+
+//Frontend
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\WishlistController;
@@ -10,7 +11,7 @@ use App\Http\Controllers\Frontend\OrderdetailController;
 use App\Http\Controllers\Frontend\CustomerController as FrontendCustomer;
 
 
-    
+ //Backend   
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
@@ -18,6 +19,7 @@ use App\Http\controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\controllers\Backend\RoleController;
 use App\Http\controllers\Backend\PermissionController;
+use App\Http\controllers\Backend\UserController;
 
 
     
@@ -90,6 +92,11 @@ Route::Group (["middleware"=>["auth", "admincheck"] , "prefix"=>"admin"], functi
     //permission 
     Route::get('/permission',[PermissionController::class,'permission_list'])->name('permission.list');
     Route::post('/permissions-assign/{id}',[PermissionController::class,'assignPermissions'])->name('permissions.assign');
+
+    //user
+    Route::get('/user',[UserController::class,'user_list'])->name('user.list');
+    Route::get('/user/create',[UserController::class,'user_create'])->name('user.create');
+    Route::post('/user/store',[UserController::class,'user_store'])->name('user.store');
 });
 
 

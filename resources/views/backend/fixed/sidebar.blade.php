@@ -37,6 +37,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+               @if(checkHasPermission(auth()->user()->role_id,'dashboard-view'))
                 <li class="nav-item menu-open">
                     <a href="#" class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -54,8 +55,9 @@
                         </li>
                     </ul>
                 </li>
+                @endif
 
-                
+                @if(checkHasPermission(auth()->user()->role_id,'category.list'))
                 <li class="nav-item">
                     <a href="pages/tables/data.html" class="nav-link">
                         <img style="height:20px; width:20px;" src="{{url('backend/assets/icon/icons-categories.png')}}"
@@ -86,7 +88,9 @@
                         </li>
                     </ul>
                 </li>
+                @endif
 
+                @if(checkHasPermission(auth()->user()->role_id,'product.list'))
                 <li class="nav-item">
                     <a href="pages/tables/data.html" class="nav-link">
                         <img style="height:25px; width:25px;" src="{{url('backend/assets/icon/icons-product-3.png')}}"
@@ -106,7 +110,30 @@
 
                     </ul>
                 </li>
+                @endif
 
+                @if(checkHasPermission(auth()->user()->role_id,'user.list'))
+                <li class="nav-item">
+                    <a href="pages/tables/data.html" class="nav-link">
+                        <img style="height:25px; width:25px;" src="{{url('backend/assets/icon/user-icon.png')}}"
+                            alt="">
+                        <p>
+                            User
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('user.list')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>List</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                @endif
+
+                @if(checkHasPermission(auth()->user()->role_id,'role.list'))
                 <li class="nav-item">
                     <a href="pages/tables/data.html" class="nav-link">
                         <img style="height:35px; width:35px;" src="{{url('backend/assets/icon/role-icon.png')}}"
@@ -125,7 +152,9 @@
                         </li>
                     </ul>
                 </li>
+                @endif
 
+                @if(checkHasPermission(auth()->user()->role_id,'permission.list'))
                 <li class="nav-item">
                     <a href="pages/tables/data.html" class="nav-link">
                         <img style="height:25px; width:25px;" src="{{url('backend/assets/icon/permission-icon.png')}}"
@@ -144,7 +173,9 @@
                         </li>
                     </ul>
                 </li>
+                @endif
 
+                @if(checkHasPermission(auth()->user()->role_id,'customer.list'))
                 <li class="nav-item">
                     <a href="pages/tables/data.html" class="nav-link">
                         <img style="height:25px; width:25px;" src="{{url('backend/assets/icon/customer-icon.png')}}"
@@ -163,7 +194,7 @@
                         </li>
                     </ul>
                 </li>
-
+               @endif
 
                 <li class="nav-item">
                     <a href="pages/widgets.html" class="nav-link">

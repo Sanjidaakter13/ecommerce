@@ -19,10 +19,13 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'role_id',
         'mobile',
         'email',
         'password',
+        'image'
     ];
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -33,6 +36,11 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    public function role(){
+        return $this->belongsTo(Role::class);
+        
+    }
 
     /**
      * The attributes that should be cast.
