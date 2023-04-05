@@ -104,17 +104,17 @@
                   </button>
                   <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                       <div class="navbar-nav mr-auto py-0">
-                          <a href="{{route('home')}}" class="nav-item nav-link  active">Home</a>
-                          <a href="{{route('shop.view')}}" class="nav-item nav-link">Shop</a>
-                          <a href="{{route('shopdetail.view')}}" class="nav-item nav-link">Shop Detail</a>
+                          <a href="{{route('home')}}" class="nav-item nav-link  active">{{__("Home")}}</a>
+                          <a href="{{route('shop.view')}}" class="nav-item nav-link">{{__('Shop')}}</a>
+                          <a href="{{route('shopdetail.view')}}" class="nav-item nav-link">{{__('Shop Detail')}}</a>
                           <div class="nav-item dropdown">
-                              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{__('Pages')}}</a>
                               <div class="dropdown-menu rounded-0 m-0">
                                   <a href="{{route('shoppingcart.view')}}" class="dropdown-item">Shopping Cart</a>
                                   <a href="{{route('checkout.view')}}" class="dropdown-item">Checkout</a>
                               </div>
                           </div>
-                          <a href="{{route('contact.view')}}" class="nav-item nav-link">Contact</a>
+                          <a href="{{route('contact.view')}}" class="nav-item nav-link">{{__('Contact')}}</a>
                       </div>
 
 
@@ -136,6 +136,12 @@
                           
                           <a href="{{route('register')}}" class="nav-item nav-link">Register</a>
                       </div>
+
+
+                 <select style="width:100px" class="form-control" name="language" id="" onchange="location = this.value;">
+                    <option @if(session()->get('loc')=='en') selected @endif  value="{{route('switch.lang','en')}}">EN</option>
+                    <option  @if(session()->get('loc')=='bn') selected @endif  value="{{route('switch.lang','bn')}}">BN</option>
+                </select>
                           
 
                       <!-- Modal -->

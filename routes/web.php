@@ -101,6 +101,9 @@ Route::Group (["middleware"=>["auth", "admincheck"] , "prefix"=>"admin"], functi
 
 
 //Frontend Routes
+//localization
+Route::group(['middleware'=>'localization'],function (){
+Route::get('/switch-lang/{lang}', [HomeController::class, 'changeLanguage'])->name('switch.lang');
 
 //Pages view
 Route::get('/',[HomeController::class,'home_view'])->name('home');
@@ -109,7 +112,7 @@ Route::get('/shop/detail/view',[HomeController::class,'shopdetail_view'])->name(
 Route::get('/checkout/view',[HomeController::class,'checkout_view'])->name('checkout.view');
 Route::get('/contact/view',[HomeController::class,'contact_view'])->name('contact.view');
 Route::get('/product/view/{id}',[HomeController::class,'product_view'])->name('product.view');
-
+});
 //Customer
 
 //Order

@@ -47,4 +47,11 @@ class HomeController extends Controller
         $product=Product::find($id);
         return view('frontend.layouts.product-view',compact('product'));
     }
+
+    public function changeLanguage($lang)
+    {
+        //session()->put('key',value)
+        session()->put('loc',$lang);
+        return redirect()->back();
+    }
 }
