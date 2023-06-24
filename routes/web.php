@@ -20,6 +20,8 @@ use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\controllers\Backend\RoleController;
 use App\Http\controllers\Backend\PermissionController;
 use App\Http\controllers\Backend\UserController;
+use App\Http\controllers\Backend\VendorController;
+
 
 
     
@@ -42,11 +44,18 @@ use App\Http\controllers\Backend\UserController;
 //ADMIN Routes
 Route::get('/admin/login',[DashboardController::class,'login'])->name('login');
 Route::post('/admin/dologin',[DashboardController::class,'dologin'])->name('admin-login');
+
+//Vendor
+Route::get('/vendor',[VendorController::class,'vendor'])->name('vendor');
+Route::post('/vendor/login',[VendorController::class,'vendor_login'])->name('vendor.login');
+
+
 //Group route
 Route::Group (["middleware"=>["auth", "admincheck"] , "prefix"=>"admin"], function(){
     
     Route::get('/logout',[DashboardController::class,'admin_logout'])->name('admin-logout');
-    
+    Route::get('/vendor/logout',[VendorController::class,'vendor_logout'])->name('vendor.logout');
+
     //Main
     Route::get('/',[DashboardController::class,'view'])->name('dashboard');
     
@@ -98,6 +107,11 @@ Route::Group (["middleware"=>["auth", "admincheck"] , "prefix"=>"admin"], functi
     Route::get('/user/create',[UserController::class,'user_create'])->name('user.create');
     Route::post('/user/store',[UserController::class,'user_store'])->name('user.store');
 });
+
+
+
+
+
 
 
 //Frontend Routes

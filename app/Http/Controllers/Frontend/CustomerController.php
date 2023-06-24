@@ -17,8 +17,10 @@ class CustomerController extends Controller
 
     public function doregistration(Request $request)
     {
+        //dd($request->all());
         User::create([
             'name'=>$request->name,
+            'role_id'=>$request->role,
             'mobile'=>$request->number,
             'email'=>$request->email,
             'password'=>bcrypt($request->password),

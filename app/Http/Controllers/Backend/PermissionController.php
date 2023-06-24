@@ -20,5 +20,6 @@ class PermissionController extends Controller
                 'permission_id'=>$permission
             ]);
         }
+        return redirect()->route('role.list');
     }
 }

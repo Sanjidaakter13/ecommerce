@@ -126,8 +126,8 @@
                               Login
                           </a>
                           @endguest
-                          @auth()
-                          <a href="{{route('logout')}}" class="nav-item nav-link">Logout( {{auth()->user()->name}}) </a>
+                          @auth('vendor')
+                          <a href="{{route('logout')}}" class="nav-item nav-link">Logout( {{auth('vendor')->user()->name}}) </a>
                           @endauth
 
                           @if(session()->has('message'))
