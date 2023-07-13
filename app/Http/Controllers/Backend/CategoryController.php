@@ -7,14 +7,32 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Mail\Categorymail;
 use Illuminate\Support\Facades\Mail;
+use Yajra\DataTables\Facades\DataTables;
 
 
 class CategoryController extends Controller
 {
     public function category_list()
     {
-        $categories=Category::all();
-        return view('backend.pages.category.list',compact('categories'));
+        if (request()->ajax()) {
+            $categories=Category::all();
+            
+            return Datatables:: of( $categories)
+                ->addIndexColumn()
+                    ->addColumn('date',function ($row){
+                    return date('Y-M-d',strtotime($row['created_at']));
+                })
+                ->addColumn('action', function($row){
+                    $actionBtn = '<a href="javascript:void(0)" class="edit btn btn-success btn-sm">Edit</a>
+                        <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>
+                        <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">View</a>';
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+       
+        return view('backend.pages.category.list');
     }
 
     public function category_create()
