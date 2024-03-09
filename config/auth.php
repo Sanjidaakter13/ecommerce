@@ -41,10 +41,6 @@ return [
             'provider' => 'users',
         ],
 
-        'vendor' => [
-            'driver' => 'session',
-            'provider' => 'vendors',
-        ],
     ],
 
     /*
@@ -70,10 +66,7 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        'vendors' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Vendor::class,
-        ],
+      
 
         // 'users' => [
         //     'driver' => 'database',
@@ -104,12 +97,7 @@ return [
             'throttle' => 60,
         ],
 
-        'vendors' => [
-            'provider' => 'customers',
-            'table' => 'password_resets',
-            'expire' => 60,
-            'throttle' => 60,
-        ],
+       
     ],
 
     /*

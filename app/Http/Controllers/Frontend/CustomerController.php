@@ -28,8 +28,14 @@ class CustomerController extends Controller
         return redirect()->route('home');
     }
 
+    public function customer_login()
+    {
+        return view('frontend.layouts.login');
+    }
+
     public function dologin(Request $request)
     {
+        //dd($request->all());
         $user=Auth::attempt([
             'email'=>$request->email,
             'password'=>$request->password,

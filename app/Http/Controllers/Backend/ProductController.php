@@ -25,17 +25,18 @@ class ProductController extends Controller
 
     public function product_store(Request $request)
     {
-        //dd($request->all());
+        // dd($request->all());
+        // dd($request->hasFile('pro_image'));
         $filerename=null;
 
         if($request->hasFile('pro_image'))
         {
             $file=$request->file('pro_image');
             $filerename="product_".rand(0,100000).date('Ymdhis').".".$file->getClientOriginalExtension();
-            $file->storeAs('uploads\products',$filerename);
+            $file->storeAs('uploads/products',$filerename);
         }
 
-        // dd($filerename);
+         //dd($filerename);
 
         Product::create([
     //Migration column name =>Input field name,

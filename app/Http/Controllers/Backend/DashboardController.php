@@ -36,6 +36,6 @@ class DashboardController extends Controller
     public function admin_logout()
     {
         Auth::logout();
-        return redirect()->route('login');
+        return redirect()->route('home');
     }
 }

@@ -59,6 +59,9 @@
                  
               </a>
           </div>
+          @if(session()->has('message'))
+                          <p class="alert alert-success">{{session()->get('message')}}</p>
+          @endif
       </div>
   </div>
   <!-- Topbar End -->
@@ -121,20 +124,21 @@
                       <div class="navbar-nav ml-auto py-0">
 
                           <!-- Button trigger modal -->
-                          @guest()
+                          
+                         
+                          @if(auth()->user())
+                          <a href="{{route('logout')}}" class="nav-item nav-link">Logout( {{auth()->user()->name}}) </a>
+                          @else
                           <a href="" class="nav-item nav-link" data-toggle="modal" data-target="#exampleModalCenter">
                               Login
                           </a>
-                          @endguest
-                          @auth('vendor')
-                          <a href="{{route('logout')}}" class="nav-item nav-link">Logout( {{auth('vendor')->user()->name}}) </a>
-                          @endauth
-
-                          @if(session()->has('message'))
-                          <p class="alert alert-success">{{session()->get('message')}}</p>
-                          @endif
-                          
                           <a href="{{route('register')}}" class="nav-item nav-link">Register</a>
+
+                          @endif
+
+                          
+                          
+                          
                       </div>
 
 

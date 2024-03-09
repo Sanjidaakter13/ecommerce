@@ -116,6 +116,11 @@ Route::Group (["middleware"=>["auth", "admincheck"] , "prefix"=>"admin"], functi
 
 
 //Frontend Routes
+
+Route::group(['middleware=>frontendauth'],function(){
+    Route::get('/checkout/view',[HomeController::class,'checkout_view'])->name('checkout.view');
+    Route::get('/logout',[FrontendCustomer::class,'logout'])->name('logout');
+});
 //localization
 Route::group(['middleware'=>'localization'],function (){
 Route::get('/switch-lang/{lang}', [HomeController::class, 'changeLanguage'])->name('switch.lang');
@@ -124,7 +129,6 @@ Route::get('/switch-lang/{lang}', [HomeController::class, 'changeLanguage'])->na
 Route::get('/',[HomeController::class,'home_view'])->name('home');
 Route::get('/shop/view',[HomeController::class,'shop_view'])->name('shop.view');
 Route::get('/shop/detail/view',[HomeController::class,'shopdetail_view'])->name('shopdetail.view');
-Route::get('/checkout/view',[HomeController::class,'checkout_view'])->name('checkout.view');
 Route::get('/contact/view',[HomeController::class,'contact_view'])->name('contact.view');
 Route::get('/product/view/{id}',[HomeController::class,'product_view'])->name('product.view');
 });
@@ -141,8 +145,8 @@ Route::get('/register',[FrontendCustomer::class,'register'])->name('register');
 Route::post('/doregistration',[FrontendCustomer::class,'doregistration'])->name('doregistration');
 
 //Login
+Route::get('/customer/login',[FrontendCustomer::class,'customer_login'])->name('customer.login');
 Route::post('/dologin',[FrontendCustomer::class,'dologin'])->name('dologin');
-Route::get('/logout',[FrontendCustomer::class,'logout'])->name('logout');
 
 //search 
 Route::get('/search',[FrontendCustomer::class,'search'])->name('search');
