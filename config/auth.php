@@ -41,6 +41,10 @@ return [
             'provider' => 'users',
         ],
 
+        'customerguard' => [
+            'driver' => 'session',
+            'provider' => 'customerprovider',
+        ],
     ],
 
     /*
@@ -66,7 +70,10 @@ return [
             'model' => App\Models\User::class,
         ],
 
-      
+        'customerprovider' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Customer::class,
+        ],
 
         // 'users' => [
         //     'driver' => 'database',
@@ -97,7 +104,12 @@ return [
             'throttle' => 60,
         ],
 
-       
+        'customers' => [
+            'provider' => 'customers',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
     ],
 
     /*

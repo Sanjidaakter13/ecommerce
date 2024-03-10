@@ -126,8 +126,8 @@
                           <!-- Button trigger modal -->
                           
                          
-                          @if(auth()->user())
-                          <a href="{{route('logout')}}" class="nav-item nav-link">Logout( {{auth()->user()->name}}) </a>
+                          @if(auth('customerguard')->user())
+                          <a href="{{route('logout')}}" class="nav-item nav-link">Logout( {{auth('customerguard')->user()->name}}) </a>
                           @else
                           <a href="" class="nav-item nav-link" data-toggle="modal" data-target="#exampleModalCenter">
                               Login

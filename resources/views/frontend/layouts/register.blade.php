@@ -10,12 +10,6 @@
             </div>
         </div>
         <div class="mb-3 row">
-            <label for="staticname" class="col-sm-2 col-form-label">Role</label>
-            <div class="col-sm-10">
-                <input name="role" type="text" class="form-control" id="staticname" value="">
-            </div>
-        </div>
-        <div class="mb-3 row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
                 <input name="email" type="email" class="form-control" id="staticEmail" value="">

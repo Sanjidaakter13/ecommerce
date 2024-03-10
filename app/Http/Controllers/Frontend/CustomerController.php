@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Product;
+use App\Models\Customer;
 use Illuminate\Support\Facades\Auth;
 
 class CustomerController extends Controller
@@ -18,9 +19,8 @@ class CustomerController extends Controller
     public function doregistration(Request $request)
     {
         //dd($request->all());
-        User::create([
+        Customer::create([
             'name'=>$request->name,
-            'role_id'=>$request->role,
             'mobile'=>$request->number,
             'email'=>$request->email,
             'password'=>bcrypt($request->password),
@@ -36,7 +36,7 @@ class CustomerController extends Controller
     public function dologin(Request $request)
     {
         //dd($request->all());
-        $user=Auth::attempt([
+        $user=Auth::guard('customerguard')->attempt([
             'email'=>$request->email,
             'password'=>$request->password,
         ]);
